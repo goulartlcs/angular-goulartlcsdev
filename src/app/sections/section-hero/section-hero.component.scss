@@ -1,0 +1,111 @@
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+
+.hero__container {
+  min-height: 100vh;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__container::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+
+  width: 100vh;
+  height: 100vw;
+
+  background-color: $dark;
+  background-image: url('../../../assets/looper_bg.svg');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transform: rotate(90deg);
+}
+
+.hero__content {
+  height: 100%;
+  padding: 0 $toast-padding-x;
+
+  .hero__content__text {
+    text-align: center;
+    font-size: 2.4rem;
+
+    h3 {
+      color: $light;
+      font-size: 1.6rem;
+
+    }
+
+    h1 {
+      color: $cyan;
+      font-size: 3.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  .hero__content__buttons {
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .hero__content__buttons--above {
+      background: linear-gradient(to right, $indigo-500, $cyan-500);
+    }
+
+    .hero__content__buttons--below {
+      background: linear-gradient(to left, $indigo-300, $pink-500);
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: $light;
+      text-decoration: none;
+
+      border-radius: $btn-border-radius-lg;
+
+      padding: 1.6rem 3.2rem;
+      width: 18rem;
+
+      position: relative;
+      z-index: 1;
+
+      span {
+        margin-left: .8rem;
+        font-size: 1.6rem;
+        text-align: center;
+      }
+    }
+
+    a + a {
+      margin-top: 1rem;
+    }
+
+    a::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 2px;
+      left: 2px;
+
+      width: calc(100% - 2px * 2);
+      height: calc(100% - 2px * 2);
+
+      border-radius: $btn-border-radius-lg;
+      background-color: $dark;
+    }
+  }
+}
