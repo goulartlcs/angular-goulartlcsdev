@@ -1,0 +1,78 @@
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+.xp__container {
+  display: flex;
+  align-items: center;
+
+  min-height: 100%;
+  padding:  6rem $container-padding-x;
+
+  background-color: $dark;
+
+  h1 {
+    font-size: $h1-font-size;
+    color: $gray-200;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+  }
+}
+
+.xp__companies {
+  ul {
+    li {
+      display: flex;
+      border-radius: $border-radius-lg;
+
+      margin: $list-group-item-padding-y 0;
+      padding: 1.4rem 0 1.4rem 2.8rem;
+      width: 100%;
+
+      color: $gray-500;
+      font-size: $font-size-lg;
+
+      &.company-selected {
+        background-color: $secondary-dark;
+        border-left: 2px solid $cyan;
+
+        color: $light;
+      }
+    }
+  }
+}
+
+.xp__descriptions {
+  margin-top: 3rem;
+
+  .xp__descriptions-content {
+    p {
+      color: $cyan;
+      font-size: $font-size-lg;
+    }
+
+    p + p {
+      color: $gray-500;
+    }
+
+    .xp__descriptions-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h5 {
+        all:unset;
+        box-sizing: border-box;
+
+        color: $light;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-lg;
+      }
+
+      p {
+        all:unset;
+        box-sizing: border-box;
+
+        color: $gray-500;
+      }
+    }
+  }
+}
