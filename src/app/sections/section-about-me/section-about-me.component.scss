@@ -1,0 +1,105 @@
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import 'node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+
+.about-me__container {
+  background: $black;
+
+  padding:  2rem $container-padding-x;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.about-me__content {
+  text-align: center;
+
+  margin: 0 auto;
+
+  img {
+    max-width: 250px;
+    margin-bottom: 2rem;
+
+    border-radius: $border-radius-pill;
+    border-left: 4px solid $cyan-500;
+  }
+}
+
+.about-me__text {
+  .about-me__title {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: $h1-font-size;
+      color: $light;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: $h3-font-size;
+      color: $gray-500;
+      font-weight: $font-weight-base;
+    }
+  }
+
+  p {
+    color: $gray-600;
+    font-size: $font-size-lg;
+    text-align: left;
+  }
+}
+
+.about-me__buttons {
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .about-me__buttons--above {
+    background: linear-gradient(to right, $indigo-500, $cyan-500);
+  }
+
+  .about-me__buttons--below {
+    background: linear-gradient(to left, $indigo-300, $pink-500);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: $light;
+    text-decoration: none;
+
+    border-radius: $btn-border-radius-lg;
+
+    padding: 1.6rem 3.2rem;
+    width: 15rem;
+
+    position: relative;
+    z-index: 1;
+
+    span {
+      margin-left: .8rem;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
+
+  a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 2px;
+    left: 2px;
+
+    width: calc(100% - 2px * 2);
+    height: calc(100% - 2px * 2);
+
+    border-radius: $btn-border-radius-lg;
+    background-color: $black;
+  }
+}
