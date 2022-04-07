@@ -31,10 +31,15 @@
       font-size: $font-size-lg;
 
       &.company-selected {
-        background-color: $secondary-dark;
+        background-color: $gray-800;
         border-left: 2px solid $cyan;
 
         color: $light;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: $gray-800;
       }
     }
   }

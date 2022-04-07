@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Experience } from 'src/app/core/models/section-experiences.model';
 
 @Component({
-  selector: 'app-experiences',
+  selector: 'app-section-experiences',
   templateUrl: './section-experiences.component.html',
   styleUrls: ['./section-experiences.component.scss']
 })
-export class ExperiencesComponent implements OnInit {
+export class SectionExperiencesComponent implements OnInit {
   experiences: Experience[] = [
     {
       "empresa": "Autônomo",
