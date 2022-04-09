@@ -2,4 +2,8 @@
 
 nav {
   background-color: $dark;
+
+  &.navbar {
+    padding: 2rem 0;
+  }
 }
