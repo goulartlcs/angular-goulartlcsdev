@@ -2,8 +2,12 @@
 
 nav {
   background-color: $dark;
+  position: absolute;
+  z-index: 2;
 
   &.navbar {
+    position: fixed;
     padding: 2rem 0;
+    width: 100%;
   }
 }
