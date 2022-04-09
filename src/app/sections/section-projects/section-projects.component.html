@@ -1,0 +1,25 @@
+<section class="projects__container" id="projetos">
+  <div class="projects__content">
+    <h1>Projetos</h1>
+    <div class="projects__list">
+      <ul>
+        <li *ngFor="let project of projects">
+          <img src="{{ project.img }}" alt="{{ project.title }}">
+          <h6>{{ project.title }}</h6>
+          <p>{{ project.description }}</p>
+          <small>{{ project.tags }}</small>
+          <div class="projects__buttons">
+            <a href="{{ project.demo }}" target="_blank" class="project__buttons--above">
+              <i class="bi bi-cloud-arrow-down" style="font-size: 1.8rem"></i>
+              <span>Demo</span>
+            </a>
+            <a href="{{ project.code }}" target="_blank" class="project__buttons--below">
+              <i class="bi bi-envelope" style="font-size: 1.6rem"></i>
+              <span>Code</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

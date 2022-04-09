@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { SectionHeroComponent } from './sections/section-hero/section-hero.component';
 import { SectionAboutMeComponent } from './sections/section-about-me/section-about-me.component';
 import { SectionExperiencesComponent } from './sections/section-experiences/section-experiences.component';
+import { SectionProjectsComponent } from './sections/section-projects/section-projects.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SectionExperiencesComponent } from './sections/section-experiences/sect
     HeaderComponent,
     SectionHeroComponent,
     SectionAboutMeComponent,
-    SectionExperiencesComponent
+    SectionExperiencesComponent,
+    SectionProjectsComponent
   ],
   imports: [
     BrowserModule,
