@@ -17,7 +17,12 @@ export class SectionExperiencesService {
   constructor() { }
 
   async getExperiences() {
-    await this.client.getAllByType('experience').then(res => {
+    await this.client.getAllByType('experience', {
+      orderings: {
+        direction: 'desc',
+        field: 'document.first_publication_date'
+      }
+    }).then(res => {
       res.map(experience => {
         const { data } = experience;
 
