@@ -8,6 +8,8 @@ import { SectionHeroComponent } from './sections/section-hero/section-hero.compo
 import { SectionAboutMeComponent } from './sections/section-about-me/section-about-me.component';
 import { SectionExperiencesComponent } from './sections/section-experiences/section-experiences.component';
 import { SectionProjectsComponent } from './sections/section-projects/section-projects.component';
+import { HttpClientModule } from '@angular/common/http'
+import { SectionProjectsService } from './core/services/section-projects.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import { SectionProjectsComponent } from './sections/section-projects/section-pr
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SectionProjectsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

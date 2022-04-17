@@ -2,7 +2,8 @@
   <div class="projects__content">
     <h1>Projetos</h1>
     <div class="projects__list">
-      <ul>
+      <p *ngIf="!isLoaded">Aguarde novidades...</p>
+      <ul *ngIf="isLoaded">
         <li *ngFor="let project of projects">
           <img src="{{ project.img }}" alt="{{ project.title }}">
           <h6>{{ project.title }}</h6>

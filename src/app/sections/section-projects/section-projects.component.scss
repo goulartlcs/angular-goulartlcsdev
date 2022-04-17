@@ -21,6 +21,10 @@
 .projects__list {
   margin-top: 3rem;
 
+  > p {
+    color: $light;
+  }
+
   ul {
     padding: 0;
 

@@ -4,5 +4,5 @@ export class Project {
   description: string;
   tags: string[];
   code: string;
-  demo: string;
+  demo?: string;
 }
