@@ -1,29 +1,31 @@
 <section class="xp__container" id="experiencias">
   <div class="xp__content">
     <h1>Experiências</h1>
-    <div class="xp__companies">
-      <p *ngIf="!isLoaded">Aguarde novidades...</p>
-      <ul *ngIf="isLoaded">
-        <li
-          *ngFor="let xp of experiences let i = index"
-          [ngClass]="indexSelected == i ? 'company-selected' : ''"
-          (click)="handleExperienceClicked(i)"
-        >
-          {{ xp.empresa }}
-        </li>
-      </ul>
-    </div>
-    <div
-      class="xp__descriptions"
-      *ngIf="experienceSelected"
-    >
-      <div class="xp__descriptions-content">
-        <div class="xp__descriptions-header">
-          <h5>{{ experienceSelected.cargo }}</h5>
-          <p>{{ experienceSelected.periodo }}</p>
+    <div>
+      <div class="xp__companies">
+        <p *ngIf="!isLoaded">Aguarde novidades...</p>
+        <ul *ngIf="isLoaded">
+          <li
+            *ngFor="let xp of experiences let i = index"
+            [ngClass]="indexSelected == i ? 'company-selected' : ''"
+            (click)="handleExperienceClicked(i)"
+          >
+            {{ xp.empresa }}
+          </li>
+        </ul>
+      </div>
+      <div
+        class="xp__descriptions"
+        *ngIf="experienceSelected"
+      >
+        <div class="xp__descriptions-content">
+          <div class="xp__descriptions-header">
+            <h5>{{ experienceSelected.cargo }}</h5>
+            <p>{{ experienceSelected.periodo }}</p>
+          </div>
+          <p>{{ experienceSelected.empresa }}</p>
+          <p>{{ experienceSelected.descricao }}</p>
         </div>
-        <p>{{ experienceSelected.empresa }}</p>
-        <p>{{ experienceSelected.descricao }}</p>
       </div>
     </div>
   </div>
