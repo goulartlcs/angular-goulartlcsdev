@@ -109,3 +109,68 @@
     }
   }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero__content {
+    height: 100vh;
+    width: 100%;
+    max-width: 980px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero__content {
+    height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero__container {
+    max-height: 650px;
+
+    background-color: $dark;
+    background-image: url('../../../assets/looper_bg.svg');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .hero__container::before {
+    display: none;
+    content: '';
+  }
+
+  .hero__content {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    .hero__content__text {
+      text-align: left;
+
+      h3 {
+        font-size: 3.8rem;
+      }
+
+      h1 {
+        font-size: 5.8rem;
+      }
+    }
+
+    .hero__content__buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      a + a {
+        margin: 0 0 0 1rem;
+      }
+    }
+  }
+}

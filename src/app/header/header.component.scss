@@ -1,4 +1,4 @@
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import '~bootstrap/scss/bootstrap.scss';
 
 nav {
   background-color: $dark;
@@ -10,4 +10,16 @@ nav {
     padding: 2rem 0;
     width: 100%;
   }
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 2.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  nav {
+
+  }
+
 }
