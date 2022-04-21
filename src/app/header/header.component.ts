@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  active: Boolean = false;
+  menuClicked: String = 'Início';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  handlerMenuClicked(evt: any) {
+    this.menuClicked = evt.target.innerHTML;
   }
 
 }

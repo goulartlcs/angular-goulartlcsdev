@@ -17,9 +17,51 @@ nav {
   }
 }
 
-@media (min-width: 768px) {
-  nav {
-
+@media (min-width: 769px) {
+  .container-fluid {
+    .navbar-brand {
+      color: $cyan;
+    }
   }
 
+
+  .navbar-collapse {
+    justify-content: space-between;
+
+    ul {
+      width: 100%;
+      justify-content: flex-end;
+
+      li {
+        a {
+          font-size: 1.6rem;
+        }
+
+        .nav-link.active {
+          color: $cyan;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .container-fluid {
+    width: 100%;
+    max-width: 760px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-fluid {
+    width: 100%;
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    width: 100%;
+    max-width: 1140px;
+  }
 }
