@@ -3,6 +3,7 @@
 
 .hero__container {
   min-height: 100vh;
+  padding-top: 82.25px;
 
   position: relative;
   overflow: hidden;
@@ -10,6 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  border: none;
 }
 
 .hero__container::before {
@@ -107,5 +110,54 @@
       border-radius: $btn-border-radius-lg;
       background-color: $dark;
     }
+  }
+}
+
+@media (min-width: 769px) {
+  .hero__container {
+    background-color: $dark;
+    background-image: url('../../../assets/looper_bg.svg');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .hero__container::before {
+    display: none;
+  }
+
+  .hero__content {
+    width: 100%;
+    max-width: 760px;
+
+    .hero__content__text {
+      text-align: left;
+
+      h3 { font-size: 3.2rem }
+      h1 { font-size: 6.8rem }
+    }
+
+    .hero__content__buttons {
+      flex-direction: row;
+      padding-top: 2rem;
+
+      a + a {
+        margin: 0 0 0 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .hero__content {
+    width: 100%;
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__content {
+    width: 100%;
+    max-width: 1140px;
   }
 }

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
 
-  min-height: 100%;
+  min-height: 560px;
   padding:  6rem $container-padding-x;
 
   background-color: $dark;
@@ -47,6 +47,7 @@
 
 .xp__descriptions {
   margin-top: 3rem;
+  min-height: 150px;
 
   .xp__descriptions-content {
     p {
@@ -79,5 +80,70 @@
         color: $gray-500;
       }
     }
+  }
+}
+
+@media (min-width: 769px) {
+  .xp__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .xp__content {
+    > div {
+      display: flex;
+
+      h1 { font-size: 3.2rem; }
+
+      .xp__companies {
+        flex-basis: 360px;
+        margin-right: 2rem;
+
+        ul {
+          li {
+            font-size: 1.6rem;
+            width: 100%;
+          }
+        }
+      }
+
+      .xp__descriptions {
+        width: 100%;
+
+        .xp__descriptions-content {
+          p { font-size: 1.6rem; }
+
+          .xp__descriptions-header {
+            h5 { font-size: 2.8rem; }
+            p { font-size: 1.4rem; }
+          }
+        }
+      }
+
+
+
+
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .xp__content {
+    width: 100%;
+    max-width: 760px;
+  }
+}
+
+@media (min-width: 992px) {
+  .xp__content {
+    width: 100%;
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .xp__content {
+    width: 100%;
+    max-width: 1140px;
   }
 }

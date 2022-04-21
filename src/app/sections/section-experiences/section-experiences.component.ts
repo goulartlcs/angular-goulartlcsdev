@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Experience } from 'src/app/core/models/section-experiences.model';
+import { Experience } from 'src/app/core/models/experience.model';
+import { SectionExperiencesService } from 'src/app/core/services/section-experiences.service';
 
 @Component({
   selector: 'app-section-experiences',
@@ -7,53 +8,33 @@ import { Experience } from 'src/app/core/models/section-experiences.model';
   styleUrls: ['./section-experiences.component.scss']
 })
 export class SectionExperiencesComponent implements OnInit {
-  experiences: Experience[] = [
-    {
-      "empresa": "Autônomo",
-      "cargo": "Motoboy",
-      "mesInicio": "Mar/2019",
-      "mesFim": "Nov/2020",
-      "descricao": "Motoboy autônomo atendendo clientes particulares em Curitiba e Região Metropolitana, para melhorar o gerenciamento das entregas e estudei um pouco sobre HTML, CSS e JS para desenvolver uma página simples para calcular automaticamente a distância entre os endereços e aplicar o meu preço, cada pedido era salvo no Google Planilhas."
-    },
-    {
-      "empresa": "Adrenalina Motos",
-      "cargo": "Assistente de E-Commerce",
-      "mesInicio": "Nov/2020",
-      "mesFim": "Mar/2021",
-      "descricao": "Responsabilidades: cadastro de produtos na plataforma, edição de imagens, e-mail marketing, separação e expedição dos pedidos realizados pela loja virtual."
-    },
-    {
-
-      "empresa": "Combat Informática",
-      "cargo": "Assistente de Marketing",
-      "mesInicio": "Mar/2021",
-      "mesFim": "Fev/2022",
-      "descricao": "Responsável pela criação de conteúdo das mídias sociais, material digital e gráfico como artes para Instagram, banners, anúncios, flyers, certificados e edição de imagem de produtos para a loja virtual."
-    },
-    {
-      "empresa": "Provider IT",
-      "cargo": "Desenvolvedor Front-End",
-      "mesInicio": "Fev/2022",
-      "mesFim": "Atualmente",
-      "descricao": "Atuo como desenvolvedor front-end em Angular 2+ alocado no time de desenvolvimento em um dos clientes da empresa, o banco BV."
-    }
-  ];
-
-  experienceDescription: Experience;
+  experiences : Experience[] = [];
+  experienceSelected: Experience;
   companySelected: boolean = true;
   indexSelected: number = 0;
+  isLoaded: Boolean = false;
 
-  constructor() { }
+  constructor(private experiencesService: SectionExperiencesService) {}
 
   ngOnInit(): void {
-    this.experiences.reverse();
-    this.getExperienceDescription(this.indexSelected);
+    this.experiencesService.getExperiences().then(res => {
+      if (res.length > 0) {
+        this.experiences = res;
+        this.isLoaded = true;
+        this.experienceSelected = this.experiences[this.indexSelected];
+      } else {
+        this.isLoaded = false;
+      }
+      }).catch(err => {
+        console.log(err);
+        this.isLoaded = false;
+      });
   }
 
-  getExperienceDescription(i: number) {
-    this.experienceDescription = this.experiences[i];
+  handleExperienceClicked(i: number) {
     this.indexSelected = i;
+    this.experienceSelected = this.experiences[this.indexSelected];
 
-    return this.experienceDescription;
+    return this.experienceSelected;
   }
 }
